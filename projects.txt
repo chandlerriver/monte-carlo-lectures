@@ -1,0 +1,9 @@
+A moive for estimating pi with errorbar
+A moive for 1d integral with errorbar
+A moive for 2d integral with errorbar
+Similar moives for the inversion method for some common distributions
+
+Random walk
+Random transport
+Ionization constant of H2O by a random process model
+MCMC based ones
