@@ -1,0 +1,105 @@
+import os
+figure_save_path = "figure"
+import warnings
+warnings.filterwarnings("error")
+import numpy as np
+np.random.seed(0)
+import matplotlib.pyplot as plt
+from PIL import Image
+
+
+##plt.title("CDF")
+##plt.xlabel("$x$")
+##plt.ylabel("$F(x)$", rotation=90)
+##plt.xlim(-0.5, 2)
+##plt.ylim(-0.5, 1.5)
+##plt.axhline(0, c="black")
+##plt.axvline(0, c="black")
+##x1 = np.arange(0, 1.1, 0.1)
+##x2 = np.arange(1, 1.8, 0.1)
+##plt.plot(x1, 1/4*np.ones(x1.size))
+##plt.plot(x2, 1*np.ones(x2.size))
+##plt.plot([1, 1], [1/4, 1], "r-.")
+##if not os.path.exists(figure_save_path):
+##    os.makedirs(figure_save_path)
+##plt.savefig(os.path.join(figure_save_path, "1-2-CDF" + ".jpg"))
+
+##plt.title("CDF")
+##plt.xlabel("$x$")
+##plt.ylabel("$F(x)$", rotation=90)
+##plt.xlim(-0.5, 3)
+##plt.ylim(-0.5, 1.5)
+##plt.axhline(0, c="black")
+##plt.axvline(0, c="black")
+##x1 = np.arange(0.0, 1.1, 0.1)
+##x2 = np.arange(1.0, 2.1, 0.1)
+##x3 = np.arange(2.0, 2.8, 0.1)
+##plt.plot(x1, 1/2*np.ones(x1.size))
+##plt.plot(x2, 5/6*np.ones(x2.size))
+##plt.plot(x3, 1*np.ones(x3.size))
+##plt.plot([1, 1], [1/2, 5/6], "r-.")
+##plt.plot([2, 2], [5/6, 1], "r-.")
+##if not os.path.exists(figure_save_path):
+##    os.makedirs(figure_save_path)
+##plt.savefig(os.path.join(figure_save_path, "1-3-CDF" + ".jpg"))
+
+##plt.title("PDF")
+##plt.xlabel("$x$")
+##plt.ylabel("$P(x)$")
+##plt.xlim(1.5, 4.5)
+##plt.ylim(0.0, 0.8)
+##plt.axhline(0, c="black")
+##plt.axvline(0, c="black")
+##x1 = np.arange(2, 4.1, 0.1)
+##plt.plot(x1, 1/2*np.ones(x1.size))
+##plt.plot([2, 2], [0, 0.5], "r-.")
+##plt.plot([4, 4], [0, 0.5], "r-.")
+##if not os.path.exists(figure_save_path):
+##    os.makedirs(figure_save_path)
+##plt.savefig(os.path.join(figure_save_path, "1-5-PDF" + ".jpg"))
+
+##plt.title("CDF")
+##plt.xlabel("$x$")
+##plt.ylabel("$F(x)$")
+##plt.xlim(-0.5, 5.0)
+##plt.ylim(-0.5, 1.5)
+##plt.axhline(0, c="black")
+##plt.axvline(0, c="black")
+##x1 = np.arange(2, 4.1, 0.1)
+##f = lambda x:0.5*(x-2)
+##plt.plot(x1, f(x1), c="b")
+##plt.plot([4, 4], [0, 1], "r-.")
+##plt.plot([4, 4.5], [1, 1], c="b")
+##if not os.path.exists(figure_save_path):
+##    os.makedirs(figure_save_path)
+##plt.savefig(os.path.join(figure_save_path, "1-5-CDF" + ".jpg"))
+
+##plt.title("CDF")
+##plt.xlabel("$x$")
+##plt.ylabel("$F(x)$")
+##plt.xlim(-0.5, 5.0)
+##plt.ylim(-0.5, 1.5)
+##plt.axhline(0, c="black")
+##plt.axvline(0, c="black")
+##x1 = np.arange(0, 4.6, 0.1)
+##f = lambda x:1-np.exp(-x)
+##plt.plot(x1, f(x1))
+##plt.axhline(1, c="r", linestyle="-.")
+##if not os.path.exists(figure_save_path):
+##    os.makedirs(figure_save_path)
+##plt.savefig(os.path.join(figure_save_path, "1-6-CDF" + ".jpg"))
+
+plt.title("PDF")
+plt.xlabel("$x$")
+plt.ylabel("$P(x)$")
+plt.xlim(-0.5, 4.5)
+plt.ylim(-0.2, 1.2)
+plt.axhline(0, c="black")
+plt.axvline(0, c="black")
+f = lambda x:np.exp(-x)
+x1 = np.arange(0, 4.1, 0.1)
+plt.plot(x1, f(x1))
+if not os.path.exists(figure_save_path):
+    os.makedirs(figure_save_path)
+plt.savefig(os.path.join(figure_save_path, "1-6-PDF" + ".jpg"))
+
