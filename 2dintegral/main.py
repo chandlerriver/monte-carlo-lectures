@@ -55,6 +55,8 @@ def main():
         plt.legend()
         if not os.path.exists(figure_save_path):
             os.makedirs(figure_save_path)
+        else:
+            pass
         plt.savefig(os.path.join(figure_save_path, str(i) + ".jpg"))
         plt.cla()
         

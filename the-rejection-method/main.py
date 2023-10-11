@@ -28,7 +28,7 @@ f1 = lambda x:0.3/np.sqrt(np.pi*2)*np.exp(-(x+2)**2/2) +\
 x_start = -10
 x_end   =  10
 
-def main(f1=f1, x_start=x_start, x_end=x_end, N = int(1e+5), maxiter = 100):
+def main(f1=f1, x_start=x_start, x_end=x_end, N = int(1e+7), maxiter = 1000):
 
     #已有分布为 numpy.random.random 导出的均匀分布
     
@@ -62,7 +62,7 @@ def main(f1=f1, x_start=x_start, x_end=x_end, N = int(1e+5), maxiter = 100):
         sample_test *= c
         
         sample_help = np.random.random(N) * (max(sample_test)-0) + 0
-
+        
         sample = sample_try[sample_help<sample_test]
 
         if has_get_num + sample.size > num_wanted:
@@ -72,12 +72,18 @@ def main(f1=f1, x_start=x_start, x_end=x_end, N = int(1e+5), maxiter = 100):
 
         has_get_num += sample.size
 
-        
-    plt.plot(x, f1(x), color='red', label='待抽样分布', linewidth=3)
-    plt.hist(result, bins=200, label='抽样数据', color='green', density=True)
+    plt.title("随机数生成分布")
+    plt.xlabel("随机数")
+    plt.ylabel("比例")
+    plt.plot(x, f1(x), color='red', label="待抽样分布", linewidth=2)
+    plt.hist(result, bins=200, label="随机数柱状分布图", color='green', density=True)
     plt.legend(prop={'size': 10})
     plt.pause(0.01)
+    if not os.path.exists(figure_save_path):
+        os.makedirs(figure_save_path)
+    else:
+        pass
+    plt.savefig(os.path.join(figure_save_path, "随机数生成分布" + ".jpg"))
     return result
 
-    
 c = main()

@@ -27,13 +27,15 @@ def main(times=100):
         Slist.append(4*S/N**0.5)
 
         plt.xlabel("test_times")
-        plt.ylabel("eastimate_pi_value", rotation=90)
-        plt.title("Eastimate Pi")
-        plt.errorbar(Nlist[:i], Pilist[:i], Slist[:i], label="eastimate pi", c="green")
+        plt.ylabel("estimate_pi_value", rotation=90)
+        plt.title("Estimate Pi")
+        plt.errorbar(Nlist[:i], Pilist[:i], Slist[:i], label="estimate pi", c="green")
         plt.axhline(np.pi,label="exact pi", c="red")
         plt.legend()
         if not os.path.exists(figure_save_path):
             os.makedirs(figure_save_path)
+        else:
+            pass
         plt.savefig(os.path.join(figure_save_path, str(i) + ".jpg"))  
         plt.cla()
      
@@ -41,7 +43,7 @@ def main(times=100):
         gif_frames.append(img)
     print("估算完成")
     print("开始绘制动画")
-    gif_frames[0].save("eastimate-pi.gif",
+    gif_frames[0].save("estimate-pi.gif",
         save_all=True, append_images=gif_frames[1:], duration=200, loop=0)
     print("动画绘制完成")
     
